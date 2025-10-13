@@ -1,0 +1,230 @@
+
+body {
+    background: radial-gradient(ellipse at top, #001f2f, #000);
+    font-family: "Poppins", sans-serif;
+    color: #00fff0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;    
+    margin-bottom: 30px;  
+}
+
+
+.logo-circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.logo-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(from 0deg, #7f00ff, #00ffff, #7f00ff);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: spin 4s linear infinite;
+}
+
+.logo-circle img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #0a0a0a;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #00fff0;
+}
+
+.subtitle {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 35px;
+    align-items: stretch; 
+}
+
+
+.support-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 240, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 240, 0.4);
+}
+
+.support-card img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+.support-card img {
+    transition: transform 0.3s ease;
+}
+
+.support-card:hover img {
+    transform: translateY(-8px) scale(1.05);
+}
+.support-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: #00e0ff;
+}
+
+.support-text {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.support-link {
+    position: relative;
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    color: #000;
+    font-weight: 600;
+    background: linear-gradient(90deg, #00fff0, #00b7ff);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    overflow: visible; 
+    z-index: 0;
+}
+
+.support-link::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, 
+        #00fff0, #00b7ff, #0077ff, #00b7ff, #00fff0);
+    background-size: 300% 300%;
+    animation: borderMove 3s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.support-link:hover::before {
+    opacity: 1;
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.email-button {
+    margin-top: 40px;
+    font-size: 16px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #00fff0, #00b3ff);
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.email-button:hover {
+    transform: scale(1.05);
+}
+
+
+.lang-switch {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    padding: 4px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+.lang-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: #bbb;
+    background: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 6px 12px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #00fff0, #00b3ff);
+    color: #000;
+}
+@media (max-width: 500px) {
+  .logo-circle {
+    width: 180px;
+    height: 180px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .logo-section {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+}
