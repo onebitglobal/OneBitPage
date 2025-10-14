@@ -11,15 +11,15 @@ body {
 .logo-section {
   display: flex;
   justify-content: center;
-  margin-top: 200px;
-  margin-bottom: 30px;
+  margin-top: 300px;
+  margin-bottom: 10px;
 }
 
 .logo-circle {
   position: relative;
   width: 250px;
   height: 250px;
-  border-radius: 50%;
+  border-radius: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,8 +36,9 @@ body {
   bottom: -6px;
   border-radius: 50%;
   background: conic-gradient(from 0deg, #7f00ff, #00ffff, #7f00ff);
-  animation: spin 4s linear infinite;
+  animation: spin 1.5s linear infinite;
   z-index: 0;
+  box-shadow: 0 0 25px rgba(0, 255, 240, 0.4);
 }
 
 
@@ -74,7 +75,7 @@ h1 {
 .subtitle {
     color: #aaa;
     font-size: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .support-grid {
     display: grid;
@@ -133,18 +134,7 @@ h1 {
   transform: translateY(-5px);
   box-shadow: 0 0 20px rgba(0, 255, 240, 0.4);
 }
-/* .support-card {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 255, 240, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.support-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 255, 240, 0.4);
-} */
 
 .support-card img {
     width: 100%;
@@ -205,7 +195,54 @@ h1 {
 .support-link:hover::before {
     opacity: 1;
 }
+.email-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+ background: linear-gradient(135deg, 
+        #00fff0, #00b7ff, #0077ff, #00b7ff, #00fff0);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
 
+.email-button:hover {
+ background: linear-gradient(135deg, 
+        #00fff0, #00b7ff, #0077ff, #00b7ff, #00fff0);
+  background-size: 200% 200%;
+  animation: gradientHover 3s ease infinite;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 240, 0.4);
+}
+
+.email-button.copied {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  transform: scale(1.05);
+  animation: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientHover {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 @keyframes borderMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
