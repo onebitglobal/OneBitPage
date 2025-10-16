@@ -115,7 +115,7 @@ function copyEmail() {
   });
 }
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = window.currentLang || "vi";
+  const savedLang = window.currentLang || "en";
   switchLang(savedLang);
   
   const emailBtn = document.querySelector(".email-button");
