@@ -17,7 +17,7 @@ const translations = {
     emailCopied: "✓ Đã copy email!",
     bankBtn: "🏦 Mã QR Ngân Hàng",
     bankModalTitle: "Thông tin chuyển khoản",
-    bankName: "Ngân hàng: ACB: Ngân hàng Thương Mại Cổ Phần Á Châu",
+    bankName: "Ngân hàng: ACB (Ngân hàng Thương Mại Cổ Phần Á Châu)",
     bankHolder: "Chủ tài khoản: HO PHUOC BAO CHAU",
     bankNumber: "Số tài khoản: 111706",
   },
